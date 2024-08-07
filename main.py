@@ -13,4 +13,9 @@ def start_handler(message):
     bot.send_message(message.chat.id, "[I want sleep](https://t.me/urikalegenda)", parse_mode="Markdown")
 
 
+@bot.message_handler(commands=["the_wather_in_crimea"])
+def start_handler(message):
+    bot.send_message(message.chat.id, "погода в Крыму прекрасная, температура +50, все как мы любим")
+
+
 bot.infinity_polling()
