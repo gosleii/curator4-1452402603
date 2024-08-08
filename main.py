@@ -1,21 +1,33 @@
 import telebot
 
-bot = telebot.TeleBot("7242541800:AAG4e7pfIO7YI2Qi3nCvj9Q6di97m7SHt9E")
+bot = telebot.TeleBot("7240912162:AAGAc_U8zZfkO-xGD4Wp2_8_FoeWqx7aL8g")
 
 
-@bot.message_handler(commands=["lets_start"])
-def start_handler(message):
-    bot.send_message(message.chat.id, "hello world")
+@bot.message_handler(commands=['start'])
+def main_1(message):
+    bot.send_message(message.chat.id, "*привет! это бот, который поможет тебе в подготовке к егэ*",
+                     parse_mode='Markdown')
 
 
-@bot.message_handler(commands=["newcommand"])
-def start_handler(message):
-    bot.send_message(message.chat.id, "[I want sleep](https://t.me/urikalegenda)", parse_mode="Markdown")
+@bot.message_handler(commands=['physics_exam_chanell'])
+def main_2(message):
+    bot.send_message(message.chat.id, "[*бесплатный * тгк преподавателя умскул по физике](https: // t.me / tesla_phys)", parse_mode='Markdown')
 
+@bot.message_handler(commands=['math_exam_chanell'])
+def main_3(message):
+    bot.send_message(message.chat.id,
+                     "[*бесплатный * тгк преподавателя умскул по математике](https: // t.me / art_matanit)", parse_mode='Markdown')
 
-@bot.message_handler(commands=["the_wather_in_crimea"])
-def start_handler(message):
-    bot.send_message(message.chat.id, "погода в Крыму прекрасная, температура +50, все как мы любим")
+@bot.message_handler(commands=['rus_exam_chanell'])
+def main_4(message):
+    bot.send_message(message.chat.id,
+                     "[*бесплатный * тгк преподавателя умскул по русскому языку](https: // t.me / dolgih_umrus)", parse_mode='Markdown')
+
+@bot.message_handler(commands=['umschool_textbook'])
+def main_5(message):
+    bot.send_message(message.chat.id,
+                     "[_учебник умскул по всем предметам_](https: // umschool.net / library / category / uchebnik /)", parse_mode='Markdown')
+
 
 
 bot.infinity_polling()
